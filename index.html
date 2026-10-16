@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harry Potter: Tipografía Jugable</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Lienzo de p5.js -->
+  <main id="stage" aria-label="Experiencia tipográfica interactiva HARRY POTTER"></main>
+
+  <!-- Controles discretos -->
+  <div id="controls">
+    <button id="btn-sound" type="button" title="Activar / desactivar sonido" aria-pressed="true">
+      <span class="icon" aria-hidden="true">♪</span><span class="label">Sonido</span>
+    </button>
+    <input id="volume" type="range" min="0" max="1" step="0.01" value="0.7" aria-label="Volumen" />
+    <button id="btn-reset" type="button" title="Reiniciar la experiencia">Reiniciar</button>
+  </div>
+
+  <!-- Indicación inicial -->
+  <p id="hint">Haz clic sobre las letras para descubrir su magia</p>
+
+  <!-- Mensaje de error (solo si falla la carga de la fuente) -->
+  <div id="error" hidden>
+    <p>No se pudo cargar la tipografía.</p>
+    <p>Abre el proyecto con un servidor local (por ejemplo, <strong>Live Server</strong> en VS Code), no con doble clic sobre el archivo.</p>
+  </div>
+
+  <!-- p5.js incluido localmente (funciona sin internet) -->
+  <script src="libs/p5.min.js"></script>
+  <!-- Módulos del proyecto: el orden importa -->
+  <script src="audio.js"></script>
+  <script src="effects.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
